@@ -3,6 +3,7 @@ import { useState } from "react";
 const Card = ({ allData }) => {
   const [newData, setNewData] = useState([]);
   const [hours, setHours] = useState(0);
+  let remaining = 20;
   const handleSelect = (data) => {
     const isExist = newData.find((item) => item.id === data.id);
     let hour = data.credit;
@@ -12,8 +13,14 @@ const Card = ({ allData }) => {
       newData.forEach((item) => {
         hour += item.credit;
       });
-      setHours(hour);
-      setNewData([...newData, data]);
+
+      if (hour > 20) {
+        return alert(" your credit hour is not enough");
+      } else {
+        setHours(hour);
+        setNewData([...newData, data]);
+      }
+
       // console.log(hour);
     }
   };
@@ -56,7 +63,9 @@ const Card = ({ allData }) => {
       </div>
 
       <div className="card w-1/4 p-10 bg-base-100 px-10 ">
-        <h2 className=" text-sky-600 font-bold">Credit Hour Remaining 7 hr</h2>
+        <h2 className=" text-sky-600 font-bold">
+          Credit Hour Remaining {remaining - hours} hr
+        </h2>
         <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
         <h1 className=" font-bold ">Course Name</h1>
         <ol className="list-decimal px-5 ">
