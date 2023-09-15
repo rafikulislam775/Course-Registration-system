@@ -1,9 +1,15 @@
+import { Result } from "postcss";
 import PropTypes from "prop-types";
 import { useState } from "react";
 const Card = ({ allData }) => {
   const [title, setTitle] = useState([]);
   const handleSelect = (data) => {
-    setTitle([...title, data]);
+    const isExist = title.find((item) => item.id === data.id);
+    if (isExist) {
+      return alert("You already enrolled this course.");
+    } else {
+      setTitle([...title, data]);
+    }
 
     console.log(data);
   };
