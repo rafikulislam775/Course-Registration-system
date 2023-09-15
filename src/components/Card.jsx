@@ -1,19 +1,25 @@
-import { Result } from "postcss";
 import PropTypes from "prop-types";
 import { useState } from "react";
 const Card = ({ allData }) => {
-  const [title, setTitle] = useState([]);
+  const [newData, setNewData] = useState([]);
+  const [hours, setHours] = useState(0);
   const handleSelect = (data) => {
-    const isExist = title.find((item) => item.id === data.id);
+    const isExist = newData.find((item) => item.id === data.id);
+    let hour = data.credit;
     if (isExist) {
       return alert("You already enrolled this course.");
     } else {
-      setTitle([...title, data]);
+      newData.forEach((item) => {
+        hour += item.credit;
+      });
+      setHours(hour);
+      setNewData([...newData, data]);
+      // console.log(hour);
     }
-
-    console.log(data);
   };
-  console.log(title);
+  console.log(hours);
+
+  console.log(newData);
   return (
     <div className=" container m-auto flex gap-4  mt-10">
       <div className="w-3/4">
@@ -49,21 +55,26 @@ const Card = ({ allData }) => {
         </div>
       </div>
 
-      <div className="card w-1/4 p-10 bg-base-100 ">
+      <div className="card w-1/4 p-10 bg-base-100 px-10 ">
         <h2 className=" text-sky-600 font-bold">Credit Hour Remaining 7 hr</h2>
         <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
-        <ol className="list-decimal p-10">
-          {title.map((item, index) => (
+        <h1 className=" font-bold ">Course Name</h1>
+        <ol className="list-decimal px-5 ">
+          {newData.map((item, index) => (
             <li key={index}>{item.title}</li>
           ))}
         </ol>
+        <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
+        <h3 className="font-semibold">Total Credit Hour : {hours}</h3>
+        <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
+        <h3 className="font-semibold">Total Price : 48000 USD</h3>
       </div>
     </div>
   );
 };
 
 Card.propTypes = {
-  allData: PropTypes.object,
+  allData: PropTypes.array,
   handleSelect: PropTypes.func,
 };
 export default Card;
