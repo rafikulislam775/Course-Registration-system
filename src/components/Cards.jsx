@@ -1,16 +1,16 @@
 import Card from "./Card";
-
+import { useEffect, useState } from "react";
 const Cards = () => {
-  return (
-    <div className="flex justify-evenly">
-      <div className="flex-initial w-3/4">
-        <Card></Card>
-      </div>
-      <div className="flex-initial w-1/4">
-        <h2>Credit Hour Remaining 7 hr</h2>
-      </div>
-    </div>
-  );
+  const [allData, setAllData] = useState([]);
+
+  // const [remaining, setRemaining] = useState(0);
+  useEffect(() => {
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((allData) => setAllData(allData));
+  }, []);
+
+  return <Card allData={allData}></Card>;
 };
 
 export default Cards;

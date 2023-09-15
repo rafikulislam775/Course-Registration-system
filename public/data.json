@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "img": "https://i.ibb.co/CvmMYwW/introtoprogramming-190909184629-thumbnail-4.jpg",
     "title": "Introduction to Programming",
     "details": "This comprehensive course covers the basics of programming, including variables, control structures, and functions. You'll learn to code in languages like Python, Java, and C++. Suitable for beginners.",
@@ -7,6 +8,7 @@
     "credit": 3
   },
   {
+    "id": 2,
     "img": "https://i.ibb.co/CJJnwxk/download.jpg",
     "title": "Web Development Fundamentals",
     "details": "Master the essentials of web development. From HTML and CSS to JavaScript and responsive design, this course will equip you with the skills needed to create stunning websites and web applications.",
@@ -14,6 +16,7 @@
     "credit": 4
   },
   {
+    "id": 3,
     "img": "https://i.ibb.co/SN2gF52/What-is-data-science-2.jpg",
     "title": "Data Science Essentials",
     "details": "Delve into the world of data science. Explore data analysis, machine learning algorithms, and data visualization tools. Gain insights from data and make data-driven decisions.",
@@ -21,6 +24,7 @@
     "credit": 5
   },
   {
+    "id": 4,
     "img": "https://i.ibb.co/tLN5jH8/Blog-Cybersecurity-Fundamentals.png",
     "title": "Cybersecurity Fundamentals",
     "details": "Learn how to protect computer systems and networks from cyber threats. Topics include network security, encryption, ethical hacking, and incident response.",
@@ -28,6 +32,7 @@
     "credit": 4
   },
   {
+    "id": 5,
     "img": "https://i.ibb.co/09bGTzk/Database-Management-Software.png",
     "title": "Database Management",
     "details": "Discover the art of database design and management. Covering SQL, NoSQL, and database optimization, this course prepares you for efficient data storage and retrieval.",
@@ -35,6 +40,7 @@
     "credit": 3
   },
   {
+    "id": 6,
     "img": "https://i.ibb.co/HCbzcDL/Mobile-App-Development-Course.png",
     "title": "Mobile App Development",
     "details": "Create mobile apps for iOS and Android platforms. You'll work with app frameworks, user interfaces, and app deployment to reach a global audience.",
@@ -42,6 +48,7 @@
     "credit": 4
   },
   {
+    "id": 7,
     "img": "https://i.ibb.co/VtdbGGG/1681529186419.png",
     "title": "Cloud Computing Fundamentals",
     "details": "Get hands-on experience with cloud services like AWS, Azure, and Google Cloud. Learn about virtualization, containers, and cloud deployment strategies.",
@@ -49,6 +56,7 @@
     "credit": 5
   },
   {
+    "id": 8,
     "img": "https://i.ibb.co/qjsrx6p/i-Stock-88269333-MEDIUM.webp",
     "title": "Machine Learning and AI",
     "details": "Dive deep into the world of artificial intelligence and machine learning. Study neural networks, deep learning, and practical AI applications in various domains.",
@@ -56,6 +64,7 @@
     "credit": 5
   },
   {
+    "id": 9,
     "img": "https://i.ibb.co/82XC72z/Dedicated-Private-Cloud.jpg",
     "title": "Network Security",
     "details": "Protect sensitive information and ensure secure data transmission. Learn about firewalls, intrusion detection, and security protocols.",
