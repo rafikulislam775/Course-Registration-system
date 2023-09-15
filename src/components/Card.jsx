@@ -3,20 +3,24 @@ import { useState } from "react";
 const Card = ({ allData }) => {
   const [newData, setNewData] = useState([]);
   const [hours, setHours] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   let remaining = 20;
   const handleSelect = (data) => {
     const isExist = newData.find((item) => item.id === data.id);
     let hour = data.credit;
+    let price = data.price;
     if (isExist) {
       return alert("You already enrolled this course.");
     } else {
       newData.forEach((item) => {
         hour += item.credit;
+        price += item.price;
       });
 
       if (hour > 20) {
         return alert(" your credit hour is not enough");
       } else {
+        setTotalPrice(price);
         setHours(hour);
         setNewData([...newData, data]);
       }
@@ -76,7 +80,7 @@ const Card = ({ allData }) => {
         <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
         <h3 className="font-semibold">Total Credit Hour : {hours}</h3>
         <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
-        <h3 className="font-semibold">Total Price : 48000 USD</h3>
+        <h3 className="font-semibold">Total Price : {totalPrice} USD</h3>
       </div>
     </div>
   );
