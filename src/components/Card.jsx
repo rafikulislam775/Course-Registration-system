@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BiBookOpen } from "react-icons/bi";
+
 const Card = ({ allData }) => {
   const [newData, setNewData] = useState([]);
   const [hours, setHours] = useState(0);
@@ -10,7 +14,7 @@ const Card = ({ allData }) => {
     let hour = data.credit;
     let price = data.price;
     if (isExist) {
-      return alert("You already enrolled this course.");
+      return toast("You already enrolled this course.");
     } else {
       newData.forEach((item) => {
         hour += item.credit;
@@ -18,7 +22,7 @@ const Card = ({ allData }) => {
       });
 
       if (hour > 20) {
-        return alert(" your credit hour is not enough");
+        return toast(" your credit hour is not enough");
       } else {
         setTotalPrice(price);
         setHours(hour);
@@ -28,15 +32,15 @@ const Card = ({ allData }) => {
       // console.log(hour);
     }
   };
-  console.log(hours);
+  // console.log(hours);
 
-  console.log(newData);
+  // console.log(newData);
   return (
     <div className=" container m-auto flex gap-4  mt-10">
       <div className="w-3/4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {allData.map((data, index) => (
-            <div key={index} className="card  bg-white shadow-lg  ">
+            <div key={index} className="card bg-white shadow-lg  ">
               <figure className="px-10 pt-10 h-36  ">
                 <img
                   src={data.img}
@@ -47,9 +51,13 @@ const Card = ({ allData }) => {
               <div className="card-body">
                 <h2 className="card-title">{data.title}</h2>
                 <p className="text-sm">{data.details}</p>
-                <div className="flex">
-                  <p> $ Price : {data.price}</p>
-                  <p>Credit : {data.credit} hr</p>
+                <div className="flex ">
+                  <p> $ Price : {data.price} </p>
+                  <p className="mt-1">
+                    <BiBookOpen />
+                  </p>
+
+                  <p> Credit : {data.credit} hr</p>
                 </div>
 
                 <div className="card-actions ">
@@ -59,6 +67,7 @@ const Card = ({ allData }) => {
                   >
                     Select
                   </button>
+                  <ToastContainer />
                 </div>
               </div>
             </div>
@@ -78,7 +87,7 @@ const Card = ({ allData }) => {
           ))}
         </ol>
         <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
-        <h3 className="font-semibold">Total Credit Hour : {hours}</h3>
+        <h3 className="font-semibold">Total Credit Hour: {hours}</h3>
         <hr className="h-px my-2 bg-gray-100 border-0 dark:bg-gray-400"></hr>
         <h3 className="font-semibold">Total Price : {totalPrice} USD</h3>
       </div>
