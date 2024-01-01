@@ -1,10 +1,10 @@
 # Course-Registration-system
 
 ## Live Link
-Explore House Trade live at [Course-Registration-system](https://6505089e90e9f34d0ec200f8--thunderous-cactus-376aaf.netlify.app/).
+Explore Course-Registration-system live at [Course-Registration-system](https://6505089e90e9f34d0ec200f8--thunderous-cactus-376aaf.netlify.app/).
 
 ##  Code link
-Find the client-side code on GitHub: [code-link](https://github.com/rafikulislam775/Course-Registration-system).
+Find the  code on GitHub: [code-link](https://github.com/rafikulislam775/Course-Registration-system).
 
 Currently, two official plugins are available:
 
